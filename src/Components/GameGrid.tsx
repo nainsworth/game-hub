@@ -15,7 +15,7 @@ function GameGrid({ gameQuery }: Props) {
     data,
     error,
     isLoading,
-    isFetchNextPage,
+    isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
   } = useGames(gameQuery);
@@ -44,7 +44,7 @@ function GameGrid({ gameQuery }: Props) {
       </SimpleGrid>
       {hasNextPage && (
         <Button marginY={5} onClick={() => fetchNextPage()}>
-          {isFetchNextPage ? "Loading..." : "Load More"}
+          {isFetchingNextPage ? "Loading..." : "Load More"}
         </Button>
       )}
     </Box>
